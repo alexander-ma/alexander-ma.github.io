@@ -31,8 +31,10 @@ plugins:
 baseurl: "/blog"
 
 header_pages:
-  - home.md
-  
+  - Home
+    url: http://alexander-ma.com
+
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
