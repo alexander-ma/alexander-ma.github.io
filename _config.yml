@@ -27,9 +27,6 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
-paginate: 5
-paginate_path: blog/page:num
-baseurl: alexander-ma.com/blog
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
