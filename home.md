@@ -1,5 +1,5 @@
 ---
 layout: page
 title: Home
-permalink: http://alexander-ma.com
+url: http://alexander-ma.com
 ---
