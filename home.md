@@ -1,4 +1,4 @@
 ---
 title: Home
-redirect-to: http://alexander-ma.com
+redirect_to: http://alexander-ma.com
 ---
