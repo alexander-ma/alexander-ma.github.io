@@ -21,11 +21,11 @@ For our Data Science Laboratory class, EE 379K, we were tasked with a project to
 
 One interesting idea we had in mind was to venture into ghostwriting, which is an interesting topic that consistently come up in rap culture. Many people believe that ghostwriting isn't being a true and authentic artist if one isn't writing their own lyrics, but many successful rappers have had reached top charts with songs that they never even wrote. 
 
-Drake has been part of the ghostwriting scene, being known for his verbal battles with Meek Mill.
+Drake has been part of the ghostwriting scene, being known for his [verbal battles with Meek Mill.](https://www.washingtonpost.com/news/morning-mix/wp/2016/05/26/drake-meek-mill-and-their-bitter-feud-about-ghostwriting-in-hip-hop/?noredirect=on&utm_term=.26a588b5266e)
+
 ![Meek Mill's tweet]({{ "/assets/meekmill.png" | absolute_url }})
 
-For better or worse, ghostwriters are secretly being used throughout all genres of the music industry. We thought it would be cool to possibly make our own A.I. ghostwriter to recreate lyrics that could one day hit #1 on Billboard's Hot 100.
-
+For better or worse, ghostwriters are secretly being used throughout all genres of the music industry. We thought it would be cool to possibly make our own A.I. ghostwriter to recreate lyrics that could be the next club banger.
 
 # Data Collection
 Our project requires lyrics from songs written by Drake. In addition to raw lyrics, we save verse markers to help identify song composition. Finally we save standard metadata like the song name and album that it originated in.
@@ -48,13 +48,81 @@ Finally, we noticed that a few songs were released both as a single and part of 
 # Now Let's Get to the Machine Learning!
 
 
-
 # N-Gram Markov Chain Models
+
+#### Overview
+The first approach we used to generate Drake's lyrics were N-Gram Markov Chains. We converted the pre-processed lyrics into order 1,2, and 3 n-grams so we would test how varying the order of the N-Gram Markov chain changes the predicted sentence.![N-Grams](https://i.stack.imgur.com/8ARA1.png)
+We then generated Markov Chains with the probability of changing to a particular state being proportional to the number of times the next state succeeded the previous state in the corpus. We continue advancing states until an end of verse marker is found in the next state.
+
+![N-gram Markov Chain](https://qph.fs.quoracdn.net/main-qimg-9b40cfdcc84e92063a499fbd88da3222)
+#### Results
+
+###### n = 1
+
+> **Shawty Wanna come through  
+and I go another  
+And Tell me  
+She gon make it time, yeah, yeah, yeah  
+Who you know who"  
+I got his music, when you n\*\*\*\*\*  
+Trust this s\*\*t I heard that I'm on  
+So yeah, yeah  
+That's the glo'ray  
+You would shut it for the same attention  
+I gave up that's it now?**
+
+You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
+
+###### n = 2
+
+> **Go and own that s\*\*t the calm  
+Dedicated to my self u deceiving  
+You spent your last fifty (ugh, cash)  
+I f\*\*k the shade they throwin'  
+Understand girl, we fam' girl  
+Tell your big homie I'm all the money in the way  
+Real n\*\*\*a what's up? what's up? what's up?  
+Now it's "F**k you, I wouldn't doubt it cause all y'all n\*\*\*\*s  
+All the girls they got it  
+Wayne put me right  
+F\*\*kin' with the kid and pray for your n\*\*\*a  
+F\*\*kin' somethin', yeah n\*\*\*a, f\*\*kin' somethin'  
+If there's hell below. I'll see you doin' well, doin' well dog  
+Blew up and pray for the city, I let that slip  
+Deceiving you are**
+
+###### n = 3
+
+> **Yeah, Lickwood means rewind, a gunshot means forward  
+You wanna do is always on, man, I guess that makes u Aunt Viv  
+Until u take from me  
+Ever since you picked up, lucky that you love me enough for two n\*\*\*\*s boy stunt double  
+Fame is like a video  
+Bunch of underground kings, thought you wanted yours like I should dust something  
+What am I in class if this is staged  
+I'm on fire  
+Tell me how to say no  
+Are we still good? Are we still breathin'  
+And its all because you chose a side  
+Kick game, run it real from the basement  
+That's why you gotta go twice  
+28 at midnight, wonder what's next for me  
+Cause to her and told me she prayed it  
+Can't have everything  
+You know it, oh ho, you know it, f\*\*k them stories, f\*\*k the f\*\*k-s\*\*t, I'm biased  
+I miss you  
+That's that s\*\*t**
+
+#### Order Comparison
+
+It seemed order 2 N-gram Markov Chains performed the best in terms of balancing creativity vs coherence and similarity to Drake's own lyrics. When we moved to order 3 chains, lyrics were essentially just being copied from songs completely, while order 1 chains lacked the coherence and similarity that we desired. However, considering that every word choice was randomly based off only the previous one for order 1 chains, the results were surprisingly good.
+
 
 
 # LSTM RNNs (Long Short-Term Memory Recurrent Neural Nets)
 
 #### Overview
+
 The other approach we used to generate lyrics was through a RNN, but specifically an **LSTM** RNN. The primary difference in the LSTM is its inherent ability to learn long-term dependencies in the data, whereas a regular RNN is severely limited in this regard.
 
 This prominent difference is due to the increased complexity of the network's update equation:
@@ -68,9 +136,11 @@ As seen above, a regular RNN simply contains repeating, single **tanh** layers.
 On the other hand, LSTM layers contain four, interacting neural network layers of point-wise operations (i.e. vector addition), concatenation, and copying of vectors to different locations within each network cell.
 
 #### Character-Level vs. Word-Level Models
+
 We trained two types of LSTM RNNs: one models the data at a *character* level, predicting the subsequent **character** given a pre-specified input sequence; the other models the data at a *word* level, predicting the subsequent **word** given a pre-specified input sequence. This prediction is repeatedly performed until the specified character or word length threshold is reached.
 
 #### Softmax Classifier (Cross-Entropy Loss)
+
 We run the same training process for both the character-level and word-level RNN: given an input sequence (i.e. "The sky is"), we one-hot encode each character (or word) into individual vectors, then feed each into the RNN iteratively. This ultimately produces a sequence of **n**-dimensional output vectors (one for each character or word in the input sequence), containing confidence scores the RNN assigns for the subsequent character or word in the sequence:
 
 ![Training Process]({{ "/assets/training.jpeg" | absolute_url }})
@@ -78,6 +148,7 @@ We run the same training process for both the character-level and word-level RNN
 This confidence score assignment is repeated continuously until the scores converge, determined through the LSTM's backpropagation algorithm which determines what directions the LSTM should adjust the network weights to. Ultimately, this increases the confidence of the "expected" subsequent character or word. In our project's case, we use **mini-batch gradient descent** to accomplish this goal. Compared to stochastic gradient descent and batch gradient descent, mini-batch succeeds in its ability to more quickly converge the confidence scores, while its increased frequency in updating the model's states allows computational efficiency due to not having all training data in memory. This helped tremendously in improving our model's predictive capabilities, especially due to our time constraints (Tuesday team rip).
 
 #### Perplexity Scoring
+
 The metric we use to determine the "correctness" of our model's predictions is through the **perplexity** function, shown below:
 
 ![Perplexity]({{ "/assets/perplexity.png" | absolute_url }})
@@ -89,6 +160,7 @@ where ***p<sub>target<sub>i</sub></sub>*** is the probability of character or wo
 #### Results!
 
 #### Word-Level Model
+
 > Canada, coming Griffith baritone, friend's<br>
 > Gotta roll a Wraith n\*\*\*\*\* to aim for soon on y'all back after now<br>
 > Now you're Toaster, and overlook my Girls from Care<br>
@@ -173,5 +245,11 @@ And the top 10 most common trigrams:
 Looking at the most common bigrams, we see that Drake commonly talks about himself and someone else "you" quite frequently in his music. The trigrams don't reveal a whole lot about the dataset in general, but rather expose patterns that are very common in his songs. For example, the song Versace has the trigram 'versace', 'versace', 'versace' 72 times in the song. 
 
 
-# Conclusion, Future Work
+# Conclusion
+
+To conclude, we created a rap lyric generator that closely mimics rap artist Drake by using a LSTM (Long Short-Term Memory) neural net by scraping for his lyrics from sites such as Genius and MetroLyrics. We also explored the options of using Markov Chains to generate lyrics that could possibly be more coherent.
+
+In the future, we hope to look deeper into implementing a rhyming scheme, and to have the model generate verses and hooks to create its own rap song. In general, this model and technique could be applied to different music artists and could be expanded to create lyrics certain genres. We found that this [Stanford research paper](https://nlp.stanford.edu/courses/cs224n/2009/fp/5.pdf) could help us achieve that goal.
+
+In all, we hope that some day an artist will utilize machine learning and neural networks to potentially create lyrics that could one day hit #1 on Billboard's Hot 100.
 
