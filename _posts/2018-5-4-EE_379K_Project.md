@@ -17,15 +17,32 @@ Kyle Polansky
 Github Link: <https://github.com/JulianDomingo/drake_lyrics>  
 
 # Motivation
+For our Data Science Laboratory class, EE 379K, we were tasked with a project to demonstrate the machine learning techniques that we have learned from the course throughout the semester. After exploring the plethora of options for our assignment, we decided to create a rap lyric generator that closely mimics the popular rap artist Drake.
 
+One interesting idea we had in mind was to venture into ghostwriting, which is an interesting topic that consistently come up in rap culture. Many people believe that ghostwriting isn't being a true and authentic artist if one isn't writing their own lyrics, but many successful rappers have had reached top charts with songs that they never even wrote. 
+
+Drake has been part of the ghostwriting scene, being known for his verbal battles with Meek Mill.
+![Meek Mill's tweet]({{ "/assets/meekmill.png" | absolute_url }})
+
+For better or worse, ghostwriters are secretly being used throughout all genres of the music industry. We thought it would be cool to possibly make our own A.I. ghostwriter to recreate lyrics that could one day hit #1 on Billboard's Hot 100.
 
 
 # Data Collection
+Our project requires lyrics from songs written by Drake. In addition to raw lyrics, we save verse markers to help identify song composition. Finally we save standard metadata like the song name and album that it originated in.
 
+We started by using a simple Spotify API search `q="artist:Drake"` to list all of Drake's songs. We removed some of the extraneous punctuation to standardize the titles.
+
+With a list of Drake's songs, we used Beautiful Soup to scrape lyrics off MetroLryics and Genius when the lyrics couldn't be found on MetroLryics. Our scraper is based off a [sample](https://towardsdatascience.com/generating-drake-rap-lyrics-using-language-models-and-lstms-8725d71b1b12 "sample") by Ruslan Nikolaev, but expanded to support more lyrics websites and a more dynamic song list. We ended up with 139 songs using this method.
+
+In the future, more advanced song searches could be performed for additional lyric data, such as looking for unreleased songs or ones where Drake is a featured artist. If this approch is pursued, it's important to be careful only to select specific verses that Drake wrote and preformed.
 
 
 # Preprocessing
+With our dataset aquired, we ran it through a few preprocessing steps. The first is to replace all newline characters with a more visible `|-|` character that denotes the end of a line. This character is treated more like a word than a whitespace character as it greatly effects the song rhythm and flow.
 
+Next up we normalized words in the lyrics. For example, the words yeah, yuh, and yea are all lexically identical. As our models focused primarily on character and word structure, we also removed most punctuation such as trailing commas and question marks. We also made all words lowercase as casing doesn't change the 
+
+Finally, we noticed that a few songs were released both as a single and part of an album, and hence in our data set twice. We manually removed these duplicate songs so they don't adversely effect the algorithm.
 
 
 # Now Let's Get to Training!
@@ -38,6 +55,57 @@ Github Link: <https://github.com/JulianDomingo/drake_lyrics>
 
 # Long Short-Term Memory Recurrent Neural Networks, or LSTM RNNs
 
+
+# Fun Facts
+Our dataset contains 75,121 words, with only 5908 unique words. The top 10 most common words are:
+
+| Word  | Count  |
+| ------------ | ------------ |
+| i  | 3266  |
+| you  | 2591  |
+| the  | 2402  |
+| to  | 1480  |
+| and  | 1440  |
+| it  | 1356  |
+| a  | 1341  |
+| me  | 1319  |
+| im  | 1198  |
+| my  | 1051  |
+
+It's interesting that many of the most commonly used words are quite short. In fact, nearly 73% of our dataset is composed of words that are 4 characters or less. We can hypothesize that Drake's structure is very simple and contains many link words.
+
+Moving onto N-Grams, here are the top 10 most common bigrams in our dataset:
+
+| Bigram  | Count  |
+| ------------ | ------------ |
+| 'you', 'know'  | 224  |
+| 'in', 'the'  | 222  |
+| 'i', 'got'  | 213  |
+| 'i', 'know'  | 188  |
+| 'i', 'dont'  | 172  |
+| 'and', 'i'  | 164  |
+| 'i', 'just'  | 163  |
+| 'on', 'the'  | 153  |
+| 'it', 'i'  | 127  |
+| 'im', 'on'  | 122  |
+
+
+And the top 10 most common trigrams:
+
+| Trigram  | Count  |
+| ------------ | ------------ |
+| 'versace', 'versace', 'versace'  | 72  |
+| 'yeah', 'yeah', 'yeah'  | 70  |
+| 'i', 'get', 'it'  | 60  |
+| 'woah', 'woah', 'woah'  | 53  |
+| 'its', 'okay', 'its'  | 50  |
+| 'okay', 'its', 'okay'  | 50  |
+| 'im', 'on', 'im'  | 50  |
+| 'on', 'im', 'on'  | 50  |
+| 'get', 'it', 'i'  | 46  |
+| 'own', 'it', 'own'  | 46  |
+
+Looking at the most common bigrams, we see that Drake commonly talks about himself and someone else "you" quite frequently in his music. The trigrams don't reveal a whole lot about the dataset in general, but rather expose patterns that are very common in his songs. For example, the song Versace has the trigram 'versace', 'versace', 'versace' 72 times in the song. 
 
 
 # Conclusion, Future Work
