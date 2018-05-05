@@ -4,7 +4,7 @@ title:  "I Only Love My LSTMs And My N-Grams - Drake Lyrics Generator"
 date:   2018-05-04 01:43:30 -0500
 categories: Data Science
 ---
-A machine learning project to produce Drake’s lyrics before he can  
+A machine learning project to produce Drake’s lyrics before he can!  
 
 ![Drake]({{ "/assets/drake.jpg" | absolute_url }})
 <hr><br>
@@ -25,7 +25,7 @@ Drake has been part of the ghostwriting scene, being known for his [verbal battl
 
 ![Meek Mill's tweet]({{ "/assets/meekmill.png" | absolute_url }})
 
-For better or worse, ghostwriters are secretly being used throughout all genres of the music industry. We thought it would be cool to possibly make our own A.I. ghostwriter to recreate lyrics that could be the next club banger.
+For better or worse, ghostwriters are secretly being used throughout all genres of the music industry. We thought it would be cool to possibly make our own A.I. ghostwriter to recreate lyrics that could be the next club banger, as well as further understand the methods of Natural Language Processing/Generation. We will also dive deeper into machine learning frameworks such as PyTorch and Tensorlow.
 
 # Data Collection
 Our project requires lyrics from songs written by Drake. In addition to raw lyrics, we save verse markers to help identify song composition. Finally we save standard metadata like the song name and album that it originated in.
@@ -38,9 +38,13 @@ In the future, more advanced song searches could be performed for additional lyr
 
 
 # Preprocessing
+
+![Data]({{ "/assets/data.png" | absolute_url }})
+| *Excuse the language* |
+
 With our dataset aquired, we ran it through a few preprocessing steps. The first is to replace all newline characters with a more visible `|-|` character that denotes the end of a line. This character is treated more like a word than a whitespace character as it greatly effects the song rhythm and flow.
 
-Next up we normalized words in the lyrics. For example, the words yeah, yuh, and yea are all lexically identical. As our models focused primarily on character and word structure, we also removed most punctuation such as trailing commas and question marks. We also made all words lowercase as casing doesn't change the 
+Next up we normalized words in the lyrics. For example, the words yeah, yuh, and yea are all lexically identical. As our models focused primarily on character and word structure, we also removed most punctuation such as trailing commas and question marks. We also made all words lowercase in order to maintain uniformity when the lyrics are generated. 
 
 Finally, we noticed that a few songs were released both as a single and part of an album, and hence in our data set twice. We manually removed these duplicate songs so they don't adversely effect the algorithm.
 
@@ -251,5 +255,9 @@ To conclude, we created a rap lyric generator that closely mimics rap artist Dra
 
 In the future, we hope to look deeper into implementing a rhyming scheme, and to have the model generate verses and hooks to create its own rap song. In general, this model and technique could be applied to different music artists and could be expanded to create lyrics certain genres. We found that this [Stanford research paper](https://nlp.stanford.edu/courses/cs224n/2009/fp/5.pdf) could help us achieve that goal.
 
+It's also important to mention that the dataset for Drake's lyrics is still a bit too small for our liking. Using an artist that has significantly more lyrics and word content would potentially create a robust lyrics. Another alternative would be to take lyrics from multiple rap artists, or the as much hip hop artists as possible.
+
 In all, we hope that some day an artist will utilize machine learning and neural networks to potentially create lyrics that could one day hit #1 on Billboard's Hot 100.
 
+
+_Thanks for reading! :)_
