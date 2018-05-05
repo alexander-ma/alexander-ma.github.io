@@ -4,7 +4,7 @@ title:  "I Only Love My LSTMs And My N-Grams - Drake Lyrics Generator"
 date:   2018-05-04 01:43:30 -0500
 categories: Data Science
 ---
-A machine learning project to produce Drake’s lyrics before he can!  
+##### _A machine learning project to produce Drake’s lyrics and possibly write Take Care Part 2_
 
 ![Drake]({{ "/assets/drake.jpg" | absolute_url }})
 <hr><br>
@@ -14,7 +14,10 @@ Karthik Konath,
 Alex Ma, 
 Kyle Polansky
 
-Github Link: <https://github.com/JulianDomingo/drake_lyrics>  
+Github Link: <https://github.com/JulianDomingo/drake_lyrics> 
+
+_If you would like to view our presentation for the project, [click here!](https://docs.google.com/presentation/d/1U_RLGtldaigLLoWls3lVqpbYNPO7oGhA-O6Njz2CeEA/edit?usp=sharing)_
+<hr><br>
 
 # Motivation
 For our Data Science Laboratory class, EE 379K, we were tasked with a project to demonstrate the machine learning techniques that we have learned from the course throughout the semester. After exploring the plethora of options for our assignment, we decided to create a rap lyric generator that closely mimics the popular rap artist Drake.
