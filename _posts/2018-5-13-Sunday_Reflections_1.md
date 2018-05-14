@@ -2,7 +2,6 @@
 layout: post
 title: "Sunday Reflections 1"
 date: 2018-05-13 1:40:34 -0500
-categories: blog
 ---
 Here's the beginning of my weekly reflections on everything that goes on in my life! I really hope that I get to keep up with writing consistently every week just to vent my thoughts on here, as well as telling my own story the more I follow through with this. The blog looks bland as of right now, but I'll try my best to make it look a bit more presentable. Honestly. the minimalistic look that Jekyll provides me isn't too bad in my opinion.
 
@@ -26,7 +25,7 @@ I have a friend coming in town the day after my final, so I hope that I get to h
 
 # Interesting thoughts or ideas?
 Here's a good ass video that I saw by Casey Neistat that really motivated me to stop with all the bullshit excuses that I give myself.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/g3s0--LcgQw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>  
+<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/g3s0--LcgQw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>  </p>
 
 
 I'm a bit rusty with writing and conveying my thoughts on here, but I'll continue to keep working on it!
