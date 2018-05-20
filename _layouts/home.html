@@ -2,31 +2,44 @@
 layout: default
 ---
 
-<div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
+<div class="post-content">
+<p>Hi there!</p>
 
-  {{ content }}
+<p>My name is Alex, and I’m from Amarillo, Texas.</p>
 
-  {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-  {%- endif -%}
+<p>I am currently an upcoming senior at The University of Texas at Austin studying Electrical and Computer Engineering.</p>
 
+<p>I love hearing people’s stories and their backgrounds, so feel free to contact me and we can see where things go from there! :)</p>
+
+<p><img src="http://localhost:4000/blog/assets/alex.jpg" alt="dis be me!!!" /></p>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Alex Ma</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Alex Ma</li><li><a class="u-email" href="mailto:alex.ma.806@gmail.com">alex.ma.806@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/alexander-ma"><svg class="svg-icon"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg> <span class="username">alexander-ma</span></a></li><li><a href="https://www.twitter.com/alex_ma1"><svg class="svg-icon"><use xlink:href="/blog/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">alex_ma1</span></a></li></ul>
 </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Hey there, welcome to my blog! There isn&#39;t much right now, but feel free to look around.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
