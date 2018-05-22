@@ -16,8 +16,8 @@
 title: "Alex Ma"
 email: alex.ma.806@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Hey there, welcome to my blog! There isn't much right now, but feel free to look around.
-baseurl: "/blog/" # the subpath of your site, e.g. /blog
+  Coder, music enthusiast, problem solver, thinker.
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://alexander-ma.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: alex_ma1
 github_username:  alexander-ma
