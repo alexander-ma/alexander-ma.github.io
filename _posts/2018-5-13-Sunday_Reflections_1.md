@@ -21,7 +21,7 @@ One thing that really hit me this week was when my roommate and I had a personal
 # What's in your way?
 I currently have my Jazz Appreciation final on tuesday (the very last day of finals week wtf) and haven't put much effort into studying for it yet. I'm a pretty avid jazz guy, and I feel as though this exam will be pretty easy and straightforward - nothing like Concurrent and Distributed Systems or Vector Calculus.
 
-I've also found that I've been holding myself back to things that I want to pursue because I sometimes down have the balls to do it. I've been thinking about starting to get serious about photography and buying a DSLR camera, but I've been really holding myself back from it due to the costs and whether I'll have the time to actively continue with taking pictures. We'll see where this goes.
+I've also found that I've been holding myself back to things that I want to pursue because I sometimes don't have the balls to do it. I've been thinking about starting to get serious about photography and buying a DSLR camera, but I've been really holding myself back from it due to the costs and whether I'll have the time to actively continue with taking pictures. We'll see where this goes.
  
 # What are you plans for next week?
 I have a friend coming in town the day after my final, so I hope that I get to hang out, grab a drink, and enjoy some company and the beautiful city of Austin for a little bit without thinking too much about school! There's tons of things to do here in Austin, and I've been missing out on some cool things such as canoeing and hiking to see some nice ass views of the city. I'll probably head back home next week for a little bit to just spend time with family and friends in Amarillo.
