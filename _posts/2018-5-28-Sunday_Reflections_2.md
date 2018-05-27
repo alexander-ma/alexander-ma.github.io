@@ -4,7 +4,7 @@ title: "Sunday Reflections 2"
 date: 2018-05-27
 ---
 
-![The Dark Lord]({{ "/assets/reflection2.jpg" | absolute_url }})
+![Uh]({{ "/assets/bob.jpg" | absolute_url }})
 
 Welcome back to my second Sunday reflections! I know I skipped last week, so pls don't hate me for it! I took a bit of time to just relax after the semester was over and splurged out on some video games, but I'll stay consistent from here on out. I also changed a bit of my website so that the main page is now the "About" tab! Just a small little change.
 
@@ -40,4 +40,4 @@ A friend of mine also reminded me that I should look into getting a head-start i
 
 I watched some pretty good movies after school ended like "500 Days of Summer" and "The Big Sick." I'm a big fan of romance films, and these are definity going on my small list of favorite movies. They're definite worth checking out.
 
-Nothing really inspirational from me right now, but I hope everyone's doing well and enjoys the rest of their Memorial Day weekend! Praise the dark lord.
+Nothing really inspirational from me right now, but I hope everyone's doing well and enjoys the rest of their Memorial Day weekend!
