@@ -4,11 +4,7 @@ title: "Sunday Reflections 3"
 date: 2018-06-03
 ---
 
-![Park Chillin']({{ "/assets/reflection3.jpg" | absolute_url }})
-
-Howdy!
-
-I'm back for another week's writing session just to recollect and see where things are so far. A lot's happened this week, and this upcoming week will be even more hectic.
+Howdy! I'm back for another week's writing session just to recollect and see where things are so far. A lot's happened this week, and this upcoming week will be even more hectic.
 
 # What did you do this past week?
 
