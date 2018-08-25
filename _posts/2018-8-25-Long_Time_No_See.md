@@ -51,7 +51,7 @@ I've always been the type of person to dive headfirst into whatever I'm working 
 
 Basically, I feel like a _copy-paste_ programmer.
 
-I've skipped out on a lot of the details and tried forced myself to go through lots of hand-waving and head nods to get to where I am now. I am not proud of that **at all.** It's time for me to fix that. I need to be okay with constantly asking **HOW** things work, and **WHY** they happen to work that way. I need to train my mind to think differently in order to become a better problem solver, and I hope to man my own ship instead of staying on cruise control. Those 10,000 hours of work isn't going to happen on its own.
+I've skipped out on a lot of the details and tried forced myself to go through lots of hand-waving and head nods to get to where I am now. I am not proud of that **at all.** It's time for me to fix that. I need to be okay with constantly asking **HOW** things work, and **WHY** they happen to work that way. I need to train my mind to think differently in order to become a better problem solver, and I hope to man my own ship instead of staying on cruise control. Those 10,000 hours of work aren't going to happen on its own.
 
 ### So now what?
 
