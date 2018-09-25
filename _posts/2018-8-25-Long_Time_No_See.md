@@ -2,6 +2,7 @@
 layout: post
 title: "Long Time No See"
 date: 2018-08-25
+published: false
 ---
 
 It's been awhile since I've written anything, and I feel like now's a good time for me to give an update as to what's been going on so far in my life. I'm on a plane for about four hours back to Austin, so buckle up, grab a beer (or some water I guess), and enjoy the ride.
