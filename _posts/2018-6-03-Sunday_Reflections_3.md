@@ -2,7 +2,7 @@
 layout: post
 title: "Sunday Reflections 3"
 date: 2018-06-03
-published: false
+published: true
 ---
 
 Howdy! I'm back for another week's writing session just to recollect and see where things are so far. A lot's happened this week, and this upcoming week will be even more hectic.

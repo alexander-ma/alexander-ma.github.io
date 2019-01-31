@@ -2,7 +2,7 @@
 layout: post
 title: "Sunday Reflections 2"
 date: 2018-05-27
-published: false
+published: true
 ---
 
 Welcome back to my second Sunday reflections! I know I skipped last week, so pls don't hate me for it! I took a bit of time to just relax after the semester was over and splurged out on some video games, but I'll stay consistent from here on out. I also changed a bit of my website so that the main page is now the "About" tab! Just a small little change.
