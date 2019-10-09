@@ -1,3 +1,20 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Alex Ma"
+theme = "hugo-theme-basic"
+googleAnalytics = "UA-XXXXXXXXX-X"
+enableEmoji = true
+
+[params]
+  titleEmoji = ":tada::tada::tada:"
+
+[Permalinks]
+  post = "post/:slug"
+
+[[params.menu]]
+  name = "blog"
+  url = "posts/"
+
+[[params.menu]]
+  name = "about"
+  url = "about/"
