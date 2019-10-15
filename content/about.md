@@ -1,17 +1,12 @@
 +++
-title = "About Hugo"
-date = "2014-04-09"
+title = "About me"
+date = "2019-10-14"
 +++
 
-Hugo is the **world’s fastest framework for building websites**. It is written in Go.
+Hi, I'm Alex. This is my personal website where I plan to blog and talk about anything that's on my mind. :whale:
 
-It makes use of a variety of open source projects including:
-
-* https://github.com/russross/blackfriday
-* https://github.com/alecthomas/chroma
-* https://github.com/muesli/smartcrop
-* https://github.com/spf13/cobra
-* https://github.com/spf13/viper
-
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+* [Email](mailto:alex.ma.806@gmail.com)
+* [Resume](/)
+* [LinkedIn](https://linkedin.com/in/ma-alex)
+* [GitHub](https://github.com/alexander-ma)
 
