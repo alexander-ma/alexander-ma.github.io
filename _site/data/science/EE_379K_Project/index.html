@@ -1,0 +1,944 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.17.2 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>I Only Love My LSTMs And My N-Grams - Drake Lyrics Generator - Alex Ma</title>
+<meta name="description" content="A machine learning project to produce Drake’s lyrics and possibly write Take Care Part 2">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Alex Ma">
+<meta property="og:title" content="I Only Love My LSTMs And My N-Grams - Drake Lyrics Generator">
+<meta property="og:url" content="http://localhost:4000/data/science/EE_379K_Project/">
+
+
+  <meta property="og:description" content="A machine learning project to produce Drake’s lyrics and possibly write Take Care Part 2">
+
+
+
+
+
+  <meta name="twitter:site" content="@notalexma">
+  <meta name="twitter:title" content="I Only Love My LSTMs And My N-Grams - Drake Lyrics Generator">
+  <meta name="twitter:description" content="A machine learning project to produce Drake’s lyrics and possibly write Take Care Part 2">
+  <meta name="twitter:url" content="http://localhost:4000/data/science/EE_379K_Project/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2018-05-04T01:43:30-05:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/data/science/EE_379K_Project/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Alex Ma",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Alex Ma Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Alex Ma
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#data" itemprop="item"><span itemprop="name">Data</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#science" itemprop="item"><span itemprop="name">Science</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">I Only Love My LSTMs And My N-Grams - Drake Lyrics Generator</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name"></h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>I am an <em>alright</em> person.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Texas, USA</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:alex.ma.806@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://twitter.com/notalexma" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/alexander-ma" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/notalexma" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+          
+        
+          
+            <li><a href="https://linkedin.com/in/ma-alex" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="I Only Love My LSTMs And My N-Grams - Drake Lyrics Generator">
+    <meta itemprop="description" content="A machine learning project to produce Drake’s lyrics and possibly write Take Care Part 2">
+    <meta itemprop="datePublished" content="May 04, 2018">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">I Only Love My LSTMs And My N-Grams - Drake Lyrics Generator
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h5 id="a-machine-learning-project-to-produce-drakes-lyrics-and-possibly-write-take-care-part-2"><em>A machine learning project to produce Drake’s lyrics and possibly write Take Care Part 2</em></h5>
+
+<p><img src="http://localhost:4000/assets/drake.jpg" alt="Drake" /></p>
+<hr />
+<p><br />
+Team Members:
+Julian Domingo, 
+Karthik Konath, 
+Alex Ma, 
+Kyle Polansky</p>
+
+<p>Github Link: <a href="https://github.com/JulianDomingo/drake_lyrics">https://github.com/JulianDomingo/drake_lyrics</a></p>
+
+<p><em>If you would like to view our presentation for the project, <a href="https://docs.google.com/presentation/d/1U_RLGtldaigLLoWls3lVqpbYNPO7oGhA-O6Njz2CeEA/edit?usp=sharing">click here!</a></em></p>
+<hr />
+<p><br /></p>
+
+<h1 id="motivation">Motivation</h1>
+<p>For our Data Science Laboratory class, EE 379K, we were tasked with a project to demonstrate the machine learning techniques that we have learned from the course throughout the semester. After exploring the plethora of options for our assignment, we decided to create a rap lyric generator that closely mimics the popular rap artist Drake.</p>
+
+<p>One interesting idea we had in mind was to venture into ghostwriting, which is an interesting topic that consistently come up in rap culture. Many people believe that ghostwriting isn’t being a true and authentic artist if one isn’t writing their own lyrics, but many successful rappers have had reached top charts with songs that they never even wrote.</p>
+
+<p>Drake has been part of the ghostwriting scene, being known for his <a href="https://www.washingtonpost.com/news/morning-mix/wp/2016/05/26/drake-meek-mill-and-their-bitter-feud-about-ghostwriting-in-hip-hop/?noredirect=on&amp;utm_term=.26a588b5266e">verbal battles with Meek Mill.</a></p>
+
+<p><img src="http://localhost:4000/assets/meekmill.png" alt="Meek Mill's tweet" /></p>
+
+<p>For better or worse, ghostwriters are secretly being used throughout all genres of the music industry. We thought it would be cool to possibly make our own A.I. ghostwriter to recreate lyrics that could be the next club banger, as well as further understand the methods of Natural Language Processing/Generation. We will also dive deeper into machine learning frameworks such as PyTorch and Tensorlow.</p>
+
+<h1 id="data-collection">Data Collection</h1>
+<p>Our project requires lyrics from songs written by Drake. In addition to raw lyrics, we save verse markers to help identify song composition. Finally we save standard metadata like the song name and album that it originated in.</p>
+
+<p>We started by using a simple Spotify API search <code class="highlighter-rouge">q="artist:Drake"</code> to list all of Drake’s songs. We removed some of the extraneous punctuation to standardize the titles.</p>
+
+<p>With a list of Drake’s songs, we used Beautiful Soup to scrape lyrics off MetroLryics and Genius when the lyrics couldn’t be found on MetroLryics. Our scraper is based off a <a href="https://towardsdatascience.com/generating-drake-rap-lyrics-using-language-models-and-lstms-8725d71b1b12" title="sample">sample</a> by Ruslan Nikolaev, but expanded to support more lyrics websites and a more dynamic song list. We ended up with 139 songs using this method.</p>
+
+<p>In the future, more advanced song searches could be performed for additional lyric data, such as looking for unreleased songs or ones where Drake is a featured artist. If this approch is pursued, it’s important to be careful only to select specific verses that Drake wrote and preformed.</p>
+
+<h1 id="preprocessing">Preprocessing</h1>
+
+<p><img src="http://localhost:4000/assets/data.png" alt="Data" />
+| <em>Excuse the language</em> |</p>
+
+<p>With our dataset aquired, we ran it through a few preprocessing steps. The first is to replace all newline characters with a more visible <code class="highlighter-rouge">|-|</code> character that denotes the end of a line. This character is treated more like a word than a whitespace character as it greatly effects the song rhythm and flow.</p>
+
+<p>Next up we normalized words in the lyrics. For example, the words yeah, yuh, and yea are all lexically identical. As our models focused primarily on character and word structure, we also removed most punctuation such as trailing commas and question marks. We also made all words lowercase in order to maintain uniformity when the lyrics are generated.</p>
+
+<p>Finally, we noticed that a few songs were released both as a single and part of an album, and hence in our data set twice. We manually removed these duplicate songs so they don’t adversely effect the algorithm.</p>
+
+<h1 id="now-lets-get-to-the-machine-learning">Now Let’s Get to the Machine Learning!</h1>
+
+<h1 id="n-gram-markov-chain-models">N-Gram Markov Chain Models</h1>
+
+<h4 id="overview">Overview</h4>
+<p>The first approach we used to generate Drake’s lyrics were N-Gram Markov Chains. We converted the pre-processed lyrics into order 1,2, and 3 n-grams so we would test how varying the order of the N-Gram Markov chain changes the predicted sentence.<img src="https://i.stack.imgur.com/8ARA1.png" alt="N-Grams" />
+We then generated Markov Chains with the probability of changing to a particular state being proportional to the number of times the next state succeeded the previous state in the corpus. We continue advancing states until an end of verse marker is found in the next state.</p>
+
+<p><img src="https://qph.fs.quoracdn.net/main-qimg-9b40cfdcc84e92063a499fbd88da3222" alt="N-gram Markov Chain" /></p>
+<h4 id="results">Results</h4>
+
+<h6 id="n--1">n = 1</h6>
+
+<blockquote>
+  <p><strong>Shawty Wanna come through<br />
+and I go another<br />
+And Tell me<br />
+She gon make it time, yeah, yeah, yeah<br />
+Who you know who”<br />
+I got his music, when you n*****<br />
+Trust this s**t I heard that I’m on<br />
+So yeah, yeah<br />
+That’s the glo’ray<br />
+You would shut it for the same attention<br />
+I gave up that’s it now?</strong></p>
+</blockquote>
+
+<p>You can rename the current file by clicking the file name in the navigation bar or by clicking the <strong>Rename</strong> button in the file explorer.</p>
+
+<h6 id="n--2">n = 2</h6>
+
+<blockquote>
+  <p><strong>Go and own that s**t the calm<br />
+Dedicated to my self u deceiving<br />
+You spent your last fifty (ugh, cash)<br />
+I f**k the shade they throwin’<br />
+Understand girl, we fam’ girl<br />
+Tell your big homie I’m all the money in the way<br />
+Real n***a what’s up? what’s up? what’s up?<br />
+Now it’s “F</strong>k you, I wouldn’t doubt it cause all y’all n****s<br />
+All the girls they got it<br />
+Wayne put me right<br />
+F**kin’ with the kid and pray for your n***a<br />
+F**kin’ somethin’, yeah n***a, f**kin’ somethin’<br />
+If there’s hell below. I’ll see you doin’ well, doin’ well dog<br />
+Blew up and pray for the city, I let that slip<br />
+Deceiving you are**</p>
+</blockquote>
+
+<h6 id="n--3">n = 3</h6>
+
+<blockquote>
+  <p><strong>Yeah, Lickwood means rewind, a gunshot means forward<br />
+You wanna do is always on, man, I guess that makes u Aunt Viv<br />
+Until u take from me<br />
+Ever since you picked up, lucky that you love me enough for two n****s boy stunt double<br />
+Fame is like a video<br />
+Bunch of underground kings, thought you wanted yours like I should dust something<br />
+What am I in class if this is staged<br />
+I’m on fire<br />
+Tell me how to say no<br />
+Are we still good? Are we still breathin’<br />
+And its all because you chose a side<br />
+Kick game, run it real from the basement<br />
+That’s why you gotta go twice<br />
+28 at midnight, wonder what’s next for me<br />
+Cause to her and told me she prayed it<br />
+Can’t have everything<br />
+You know it, oh ho, you know it, f**k them stories, f**k the f**k-s**t, I’m biased<br />
+I miss you<br />
+That’s that s**t</strong></p>
+</blockquote>
+
+<h4 id="order-comparison">Order Comparison</h4>
+
+<p>It seemed order 2 N-gram Markov Chains performed the best in terms of balancing creativity vs coherence and similarity to Drake’s own lyrics. When we moved to order 3 chains, lyrics were essentially just being copied from songs completely, while order 1 chains lacked the coherence and similarity that we desired. However, considering that every word choice was randomly based off only the previous one for order 1 chains, the results were surprisingly good.</p>
+
+<h1 id="lstm-rnns-long-short-term-memory-recurrent-neural-nets">LSTM RNNs (Long Short-Term Memory Recurrent Neural Nets)</h1>
+
+<h4 id="overview-1">Overview</h4>
+
+<p>The other approach we used to generate lyrics was through a RNN, but specifically an <strong>LSTM</strong> RNN. The primary difference in the LSTM is its inherent ability to learn long-term dependencies in the data, whereas a regular RNN is severely limited in this regard.</p>
+
+<p>This prominent difference is due to the increased complexity of the network’s update equation:</p>
+
+<p><img src="http://localhost:4000/assets/regular_rnn.png" alt="Regular RNN" /></p>
+
+<p>As seen above, a regular RNN simply contains repeating, single <strong>tanh</strong> layers.</p>
+
+<p><img src="http://localhost:4000/assets/lstm_rnn.png" alt="LSTM RNN" /></p>
+
+<p>On the other hand, LSTM layers contain four, interacting neural network layers of point-wise operations (i.e. vector addition), concatenation, and copying of vectors to different locations within each network cell.</p>
+
+<h4 id="character-level-vs-word-level-models">Character-Level vs. Word-Level Models</h4>
+
+<p>We trained two types of LSTM RNNs: one models the data at a <em>character</em> level, predicting the subsequent <strong>character</strong> given a pre-specified input sequence; the other models the data at a <em>word</em> level, predicting the subsequent <strong>word</strong> given a pre-specified input sequence. This prediction is repeatedly performed until the specified character or word length threshold is reached.</p>
+
+<h4 id="softmax-classifier-cross-entropy-loss">Softmax Classifier (Cross-Entropy Loss)</h4>
+
+<p>We run the same training process for both the character-level and word-level RNN: given an input sequence (i.e. “The sky is”), we one-hot encode each character (or word) into individual vectors, then feed each into the RNN iteratively. This ultimately produces a sequence of <strong>n</strong>-dimensional output vectors (one for each character or word in the input sequence), containing confidence scores the RNN assigns for the subsequent character or word in the sequence:</p>
+
+<p><img src="http://localhost:4000/assets/training.jpeg" alt="Training Process" /></p>
+
+<p>This confidence score assignment is repeated continuously until the scores converge, determined through the LSTM’s backpropagation algorithm which determines what directions the LSTM should adjust the network weights to. Ultimately, this increases the confidence of the “expected” subsequent character or word. In our project’s case, we use <strong>mini-batch gradient descent</strong> to accomplish this goal. Compared to stochastic gradient descent and batch gradient descent, mini-batch succeeds in its ability to more quickly converge the confidence scores, while its increased frequency in updating the model’s states allows computational efficiency due to not having all training data in memory. This helped tremendously in improving our model’s predictive capabilities, especially due to our time constraints (Tuesday team rip).</p>
+
+<h4 id="perplexity-scoring">Perplexity Scoring</h4>
+
+<p>The metric we use to determine the “correctness” of our model’s predictions is through the <strong>perplexity</strong> function, shown below:</p>
+
+<p><img src="http://localhost:4000/assets/perplexity.png" alt="Perplexity" /></p>
+
+<p>where <strong><em>p<sub>target<sub>i</sub></sub></em></strong> is the probability of character or word <strong><em>i</em></strong> occurring as the prediction. The character-level RNN converged to a lower perplexity score in comparison to the word-level RNN, shown below:</p>
+
+<p><img src="http://localhost:4000/assets/training_perplexity.png" alt="Training Loss - Perplexity" /></p>
+
+<h4 id="results-1">Results!</h4>
+
+<h4 id="word-level-model">Word-Level Model</h4>
+
+<blockquote>
+  <p>Canada, coming Griffith baritone, friend’s<br />
+Gotta roll a Wraith n***** to aim for soon on y’all back after now<br />
+Now you’re Toaster, and overlook my Girls from Care<br />
+I’m a good girl too got you had the dead<br />
+Mothaf***a feel let ‘em knew good some same girls, ever make it like</p>
+</blockquote>
+
+<p>As seen above, the word-level model doesn’t capture grammatical syntax very well. We concluded it is primarily due to the size of our training data, as Drake only has ~140 songs released by himself + singles.</p>
+
+<h4 id="character-level-model">Character-Level Model</h4>
+
+<h6 id="epoch-1">Epoch 1</h6>
+<blockquote>
+  <p>Why it wacting you frop tels and bezy so<br />
+That’s you prised<br />
+Intuigh ofrest<br />
+And o lith be’ve the lasle</p>
+</blockquote>
+
+<h6 id="epoch-25">Epoch 25</h6>
+<blockquote>
+  <p>Yeah dink ya is laying all you hands<br />
+Why I’m in the virtion that right?<br />
+When she could ever put the costs with me<br />
+I’m the one she can so getting in my knees<br />
+When I be right around my hands for my own peace”</p>
+</blockquote>
+
+<h6 id="epoch-50">Epoch 50</h6>
+<blockquote>
+  <p>And I’m feeling so low with a good go<br />
+That’s why I ain’t all that I made<br />
+I just need a way, on and on I about to lose everyday</p>
+</blockquote>
+
+<p>For the character-level model, the RNN progressively begins to understand grammatical syntax, and at epoch <strong>50</strong>, it begins to model internal rhyming. We concluded that the character-level RNN ended up performing significantly better after a long period of training due to the smaller size of our training corpus - with more data to train on, the word-level model would likely perform at a similar level as the character-level RNN.</p>
+
+<h1 id="fun-facts">Fun Facts</h1>
+<p>Our dataset contains 75,121 words, with only 5908 unique words. The top 10 most common words are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Word</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>i</td>
+      <td>3266</td>
+    </tr>
+    <tr>
+      <td>you</td>
+      <td>2591</td>
+    </tr>
+    <tr>
+      <td>the</td>
+      <td>2402</td>
+    </tr>
+    <tr>
+      <td>to</td>
+      <td>1480</td>
+    </tr>
+    <tr>
+      <td>and</td>
+      <td>1440</td>
+    </tr>
+    <tr>
+      <td>it</td>
+      <td>1356</td>
+    </tr>
+    <tr>
+      <td>a</td>
+      <td>1341</td>
+    </tr>
+    <tr>
+      <td>me</td>
+      <td>1319</td>
+    </tr>
+    <tr>
+      <td>im</td>
+      <td>1198</td>
+    </tr>
+    <tr>
+      <td>my</td>
+      <td>1051</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>It’s interesting that many of the most commonly used words are quite short. In fact, nearly 73% of our dataset is composed of words that are 4 characters or less. We can hypothesize that Drake’s structure is very simple and contains many link words.</p>
+
+<p>Moving onto N-Grams, here are the top 10 most common bigrams in our dataset:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bigram</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>‘you’, ‘know’</td>
+      <td>224</td>
+    </tr>
+    <tr>
+      <td>‘in’, ‘the’</td>
+      <td>222</td>
+    </tr>
+    <tr>
+      <td>‘i’, ‘got’</td>
+      <td>213</td>
+    </tr>
+    <tr>
+      <td>‘i’, ‘know’</td>
+      <td>188</td>
+    </tr>
+    <tr>
+      <td>‘i’, ‘dont’</td>
+      <td>172</td>
+    </tr>
+    <tr>
+      <td>‘and’, ‘i’</td>
+      <td>164</td>
+    </tr>
+    <tr>
+      <td>‘i’, ‘just’</td>
+      <td>163</td>
+    </tr>
+    <tr>
+      <td>‘on’, ‘the’</td>
+      <td>153</td>
+    </tr>
+    <tr>
+      <td>‘it’, ‘i’</td>
+      <td>127</td>
+    </tr>
+    <tr>
+      <td>‘im’, ‘on’</td>
+      <td>122</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>And the top 10 most common trigrams:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Trigram</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>‘versace’, ‘versace’, ‘versace’</td>
+      <td>72</td>
+    </tr>
+    <tr>
+      <td>‘yeah’, ‘yeah’, ‘yeah’</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <td>‘i’, ‘get’, ‘it’</td>
+      <td>60</td>
+    </tr>
+    <tr>
+      <td>‘woah’, ‘woah’, ‘woah’</td>
+      <td>53</td>
+    </tr>
+    <tr>
+      <td>‘its’, ‘okay’, ‘its’</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>‘okay’, ‘its’, ‘okay’</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>‘im’, ‘on’, ‘im’</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>‘on’, ‘im’, ‘on’</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>‘get’, ‘it’, ‘i’</td>
+      <td>46</td>
+    </tr>
+    <tr>
+      <td>‘own’, ‘it’, ‘own’</td>
+      <td>46</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Looking at the most common bigrams, we see that Drake commonly talks about himself and someone else “you” quite frequently in his music. The trigrams don’t reveal a whole lot about the dataset in general, but rather expose patterns that are very common in his songs. For example, the song Versace has the trigram ‘versace’, ‘versace’, ‘versace’ 72 times in the song.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>To conclude, we created a rap lyric generator that closely mimics rap artist Drake by using a LSTM (Long Short-Term Memory) neural net by scraping for his lyrics from sites such as Genius and MetroLyrics. We also explored the options of using Markov Chains to generate lyrics that could possibly be more coherent.</p>
+
+<p>In the future, we hope to look deeper into implementing a rhyming scheme, and to have the model generate verses and hooks to create its own rap song. In general, this model and technique could be applied to different music artists and could be expanded to create lyrics certain genres. We found that this <a href="https://nlp.stanford.edu/courses/cs224n/2009/fp/5.pdf">Stanford research paper</a> could help us achieve that goal.</p>
+
+<p>It’s also important to mention that the dataset for Drake’s lyrics is still a bit too small for our liking. Using an artist that has significantly more lyrics and word content would potentially create a robust lyrics. Another alternative would be to take lyrics from multiple rap artists, or the as much hip hop artists as possible.</p>
+
+<p>In all, we hope that some day an artist will utilize machine learning and neural networks to potentially create lyrics that could one day hit #1 on Billboard’s Hot 100.</p>
+
+<p><em>Thanks for reading! :)</em></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#data" class="page__taxonomy-item" rel="tag">Data</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/categories/#science" class="page__taxonomy-item" rel="tag">Science</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-05-04T01:43:30-05:00">May 04, 2018</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=notalexma&text=I+Only+Love+My+LSTMs+And+My+N-Grams+-+Drake+Lyrics+Generator%20http%3A%2F%2Flocalhost%3A4000%2Fdata%2Fscience%2FEE_379K_Project%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fdata%2Fscience%2FEE_379K_Project%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fdata%2Fscience%2FEE_379K_Project%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="/Sunday_Reflections_1/" class="pagination--pager" title="Sunday Reflections 1
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/A_Review_of_2019/" rel="permalink">A Review of 2019
+</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">It’s crazy to look back and think about all of the things that has happened in my life so far. In 2009, I was in middle school. No one likes middle school. T...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/Long_Time_No_See/" rel="permalink">Long Time No See
+</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">It’s been awhile since I’ve written anything, and I feel like now’s a good time for me to give an update as to what’s been going on so far in my life. I’m on...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/Sunday_Reflections_3/" rel="permalink">Sunday Reflections 3
+</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">Howdy! I’m back for another week’s writing session just to recollect and see where things are so far. A lot’s happened this week, and this upcoming week will...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/Sunday_Reflections_2/" rel="permalink">Sunday Reflections 2
+</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">Welcome back to my second Sunday reflections! I know I skipped last week, so pls don’t hate me for it! I took a bit of time to just relax after the semester ...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/notalexma" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/alexander-ma" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+          <li><a href="https://instagram.com/notalexma" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://linkedin.com/in/ma-alex" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2019 Alex Ma. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
