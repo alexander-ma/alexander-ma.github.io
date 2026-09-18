@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Home on Alex Ma</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Home on Alex Ma</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 09 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A new beginning</title>
+      <link>http://localhost:1313/blog/hello-world/</link>
+      <pubDate>Wed, 09 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/hello-world/</guid>
+      <description>Why I am making this site and what I plan to share here.</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;For projects, collaborations, or a good conversation, &lt;a href=&#34;http://localhost:1313/contact/&#34;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contact</title>
+      <link>http://localhost:1313/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contact/</guid>
+      <description>&lt;p&gt;You can find me on &lt;a href=&#34;https://github.com/alexander-ma&#34;&gt;GitHub&lt;/a&gt; and &lt;a href=&#34;https://www.linkedin.com/in/ma-alex/&#34;&gt;LinkedIn&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
